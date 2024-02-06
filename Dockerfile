@@ -26,8 +26,9 @@ RUN apk --no-cache add curl ca-certificates openjdk9-jre parallel bash && \
     java -cp ${JMETER_HOME}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller && \
     chmod +x ${JMETER_HOME}/bin/PluginsManagerCMD.sh && \
     rm -rf ${JMETER_HOME}/docs && rm -rf ${JMETER_HOME}/printable_docs \
-    rm -rf /var/cache/apk/* && \
-    chmod a+x /entrypoint.sh && 
+    rm -rf /var/cache/apk/* 
+#    && \
+#    chmod a+x /entrypoint.sh && 
 #    chmod a+x /cleanup.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
